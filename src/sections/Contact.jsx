@@ -17,11 +17,10 @@ export default function Contact() {
           Contact
         </div>
         <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', fontWeight: 700, letterSpacing: '-0.02em', marginBottom: '1rem', lineHeight: 1.1 }}>
-          Travaillons ensemble
+          Me contacter
         </h2>
         <p style={{ color: 'var(--text2)', marginBottom: '2.5rem', maxWidth: 1500 }}>
-          Je suis ouvert à des opportunités de stage, d'emploi ou de collaboration sur des projets innovants.
-        </p>
+  N’hésitez pas à me contacter pour toute information ou échange autour de mon profil et de mes projets        </p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: 1500 }}>
           {contactLinks.map(c => (
             <motion.a
