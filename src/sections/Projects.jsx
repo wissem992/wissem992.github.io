@@ -5,7 +5,7 @@ import { SectionWrapper, SectionHeader } from '../components/SectionWrapper'
 import { useData } from '../useData'
 
 function ProjectCard({ project, delay }) {
-  const data = useData() 
+  
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-40px' })
 
@@ -62,6 +62,7 @@ function ProjectCard({ project, delay }) {
 }
 
 export default function Projects() {
+  const data = useData() 
   return (
     <SectionWrapper id="projects" bg="var(--bg2)">
       <SectionHeader
