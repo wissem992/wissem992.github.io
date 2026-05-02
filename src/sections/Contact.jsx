@@ -4,8 +4,8 @@ import { data } from '../data'
 
 const contactLinks = [
   { icon: '✉️', label: 'Email', value: data.email, href: `mailto:${data.email}` },
-  { icon: '💼', label: 'LinkedIn', value: 'linkedin.com/in/votrenom', href: data.linkedin },
-  { icon: '⌨️', label: 'GitHub', value: 'github.com/votrenom', href: data.github },
+  { icon: '💼', label: 'LinkedIn', value: 'https://www.linkedin.com/in/zitouni-wissem/', href: data.linkedin },
+  { icon: '⌨️', label: 'GitHub', value: 'https://github.com/wissem992', href: data.github },
   { icon: '📍', label: 'Localisation', value: data.location, href: null },
 ]
 
