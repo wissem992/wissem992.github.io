@@ -65,7 +65,7 @@ export default function Navbar() {
           fontSize: '0.85rem', fontWeight: 500,
         }}
       >
-        {i18n.language === 'fr' ? '🇬🇧 EN' : '🇫🇷 FR'}
+        {i18n.language === 'fr' ? 'US EN' : '🇫🇷 FR'}
       </button>
 
       <style>{`
