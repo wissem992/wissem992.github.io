@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import { data } from '../data'
 
@@ -8,6 +9,7 @@ const fadeUp = (delay = 0) => ({
 })
 
 export default function Hero() {
+  const { t } = useTranslation()
   return (
     <section style={{
       minHeight: '100vh', display: 'flex', alignItems: 'center',
@@ -52,9 +54,9 @@ export default function Hero() {
 
         {/* CTAs */}
         <motion.div {...fadeUp(0.35)} style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-          <BtnPrimary href="#projects">Voir mes projets →</BtnPrimary>
-          {/* <BtnOutline href="#contact">Télécharger CV</BtnOutline> */}
-        </motion.div>
+  <BtnPrimary href="#projects">{t('hero.cta_projects')}</BtnPrimary>
+  {/* <BtnOutline href="#contact">{t('hero.cta_cv')}</BtnOutline> */}
+</motion.div>
 
        
       </div>

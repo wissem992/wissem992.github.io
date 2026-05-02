@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import { SectionWrapper, FadeIn } from '../components/SectionWrapper'
 import { data } from '../data'
@@ -10,17 +11,19 @@ const contactLinks = [
 ]
 
 export default function Contact() {
+  const { t } = useTranslation()
   return (
     <SectionWrapper id="contact" bg="var(--bg2)">
       <FadeIn>
         <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--accent)', fontWeight: 500, marginBottom: '0.75rem' }}>
-          Contact
+          {t('contact.label')}
         </div>
         <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 3rem)', fontWeight: 700, letterSpacing: '-0.02em', marginBottom: '1rem', lineHeight: 1.1 }}>
-          Me contacter
+          {t('contact.title')}
         </h2>
         <p style={{ color: 'var(--text2)', marginBottom: '2.5rem', maxWidth: 1500 }}>
-  N’hésitez pas à me contacter pour toute information ou échange autour de mon profil et de mes projets        </p>
+          {t('contact.desc')}
+        </p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: 1500 }}>
           {contactLinks.map(c => (
             <motion.a

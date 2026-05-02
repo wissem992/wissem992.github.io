@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-
+import { useTranslation } from 'react-i18next'
 const links = [
   { label: 'À propos', href: '#about' },
   { label: 'Compétences', href: '#skills' },
@@ -8,7 +8,11 @@ const links = [
   // { label: 'Formation', href: '#education' },
   { label: 'Contact', href: '#contact' },
 ]
+const { i18n } = useTranslation()
 
+const toggleLang = () => {
+  i18n.changeLanguage(i18n.language === 'fr' ? 'en' : 'fr')
+}
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -52,17 +56,18 @@ export default function Navbar() {
         ))}
       </ul>
 
-      <a href="#contact" style={{
-        display: 'inline-flex', alignItems: 'center', gap: 8,
-        padding: '10px 20px', background: 'var(--accent)',
-        color: '#0A0E1A', borderRadius: 8, fontWeight: 500, fontSize: '0.85rem',
-        transition: 'opacity 0.2s',
-      }}
-        onMouseEnter={e => e.currentTarget.style.opacity = '0.85'}
-        onMouseLeave={e => e.currentTarget.style.opacity = '1'}
+      <button
+        onClick={toggleLang}
+        style={{
+          background: 'var(--card)',
+          border: '1px solid var(--border)',
+          borderRadius: 8, padding: '8px 14px',
+          color: 'var(--text)', cursor: 'pointer',
+          fontSize: '0.85rem', fontWeight: 500,
+        }}
       >
-        Me contacter
-      </a>
+        {i18n.language === 'fr' ? '🇬🇧 EN' : '🇫🇷 FR'}
+      </button>
 
       <style>{`
         @media (max-width: 900px) {

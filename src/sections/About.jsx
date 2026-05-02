@@ -1,7 +1,9 @@
+import { useTranslation } from 'react-i18next'
 import { SectionWrapper, FadeIn, SectionHeader } from '../components/SectionWrapper'
 import { data } from '../data'
 
 export default function About() {
+  const { t } = useTranslation()
   return (
     <SectionWrapper id="about" bg="var(--bg2)">
       <div style={{
@@ -33,10 +35,10 @@ export default function About() {
         {/* Text */}
         <FadeIn delay={0.15}>
           <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--accent)', fontWeight: 500, marginBottom: '0.75rem' }}>
-            À propos de moi
+            {t('about.label')}
           </div>
           <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.4rem)', fontWeight: 700, letterSpacing: '-0.02em', marginBottom: '1.2rem', lineHeight: 1.1 }}>
-            Passionné par les systèmes intelligents
+            {t('about.title')}
           </h2>
           {data.about.split('\n\n').map((p, i) => (
             <p key={i} style={{ color: 'var(--text2)', marginBottom: '1.2rem' }}>{p}</p>

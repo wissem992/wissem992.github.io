@@ -9,7 +9,7 @@ export default function Footer() {
       color: 'var(--text3)', fontSize: '0.8rem', flexWrap: 'wrap', gap: '0.5rem',
     }}>
       <div>© {new Date().getFullYear()} — {data.name}. Tous droits réservés.</div>
-      <div>Conçu avec React · Master SII</div>
+      
     </footer>
   )
 }
