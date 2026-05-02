@@ -3,16 +3,18 @@ import { motion } from 'framer-motion'
 import { SectionWrapper, FadeIn } from '../components/SectionWrapper'
 import { useData } from '../useData'
 
-const contactLinks = [
+
+
+export default function Contact() {
+  const data = useData()
+
+  const { t } = useTranslation()
+  const contactLinks = [
   { icon: '✉️', label: 'Email', value: data.email, href: `mailto:${data.email}` },
   { icon: '💼', label: 'LinkedIn', value: 'https://www.linkedin.com/in/zitouni-wissem/', href: data.linkedin },
   { icon: '⌨️', label: 'GitHub', value: 'https://github.com/wissem992', href: data.github },
   { icon: '📍', label: 'Localisation', value: data.location, href: null },
-]
-
-export default function Contact() {
-  const data = useData()
-  const { t } = useTranslation()
+  ]
   return (
     <SectionWrapper id="contact" bg="var(--bg2)">
       <FadeIn>
