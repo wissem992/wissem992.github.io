@@ -1,8 +1,9 @@
 import { useTranslation } from 'react-i18next'
 import { SectionWrapper, FadeIn, SectionHeader } from '../components/SectionWrapper'
-import { data } from '../data'
+import { useData } from '../useData'
 
 export default function About() {
+  const data = useData()
   const { t } = useTranslation()
   return (
     <SectionWrapper id="about" bg="var(--bg2)">

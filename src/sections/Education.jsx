@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion'
 import { SectionWrapper, FadeIn } from '../components/SectionWrapper'
-import { data } from '../data'
+import { useData } from '../useData'
 
 export default function Education() {
+  const data = useData()
   return (
     <SectionWrapper id="education">
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '5rem', alignItems: 'start' }}>

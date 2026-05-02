@@ -2,9 +2,10 @@ import { motion } from 'framer-motion'
 import { useRef } from 'react'
 import { useInView } from 'framer-motion'
 import { SectionWrapper, SectionHeader } from '../components/SectionWrapper'
-import { data } from '../data'
+import { useData } from '../useData'
 
 function ProjectCard({ project, delay }) {
+  const data = useData() 
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-40px' })
 

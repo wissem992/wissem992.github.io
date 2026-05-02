@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
-
+import { useData } from '../useData'
 export default function Navbar() {
+  const data = useData()
   const [scrolled, setScrolled] = useState(false)
   const { t, i18n } = useTranslation()  // ← à l'intérieur du composant
 

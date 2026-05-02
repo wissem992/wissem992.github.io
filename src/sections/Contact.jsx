@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import { SectionWrapper, FadeIn } from '../components/SectionWrapper'
-import { data } from '../data'
+import { useData } from '../useData'
 
 const contactLinks = [
   { icon: '✉️', label: 'Email', value: data.email, href: `mailto:${data.email}` },
@@ -11,6 +11,7 @@ const contactLinks = [
 ]
 
 export default function Contact() {
+  const data = useData()
   const { t } = useTranslation()
   return (
     <SectionWrapper id="contact" bg="var(--bg2)">

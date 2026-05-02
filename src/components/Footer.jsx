@@ -1,6 +1,7 @@
-import { data } from '../data'
+import { useData } from '../useData'
 
 export default function Footer() {
+  const data = useData()
   return (
     <footer style={{
       padding: '2rem 4rem',

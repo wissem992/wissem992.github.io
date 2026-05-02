@@ -2,9 +2,10 @@ import { motion } from 'framer-motion'
 import { useRef } from 'react'
 import { useInView } from 'framer-motion'
 import { SectionWrapper, FadeIn, SectionHeader } from '../components/SectionWrapper'
-import { data } from '../data'
+import { useData } from '../useData'
 
 function SkillBar({ label, value, inView }) {
+  
   return (
     <div style={{ marginBottom: 10 }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.78rem', color: 'var(--text3)', marginBottom: 4 }}>
@@ -75,6 +76,7 @@ function SkillCard({ skill, delay }) {
 }
 
 export default function Skills() {
+  const data = useData() 
   return (
     <SectionWrapper id="skills">
       <SectionHeader

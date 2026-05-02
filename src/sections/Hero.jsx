@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
-import { data } from '../data'
+import { useData } from '../useData'
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 30 },
@@ -9,6 +9,7 @@ const fadeUp = (delay = 0) => ({
 })
 
 export default function Hero() {
+  const data = useData()
   const { t } = useTranslation()
   return (
     <section style={{
