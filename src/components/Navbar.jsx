@@ -1,21 +1,21 @@
 import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
-const links = [
-  { label: 'À propos', href: '#about' },
-  { label: 'Compétences', href: '#skills' },
-  { label: 'Projets', href: '#projects' },
-  // { label: 'Formation', href: '#education' },
-  { label: 'Contact', href: '#contact' },
-]
-const { i18n } = useTranslation()
 
-const toggleLang = () => {
-  i18n.changeLanguage(i18n.language === 'fr' ? 'en' : 'fr')
-}
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
+  const { t, i18n } = useTranslation()  // ← à l'intérieur du composant
+
+  const toggleLang = () => {
+    i18n.changeLanguage(i18n.language === 'fr' ? 'en' : 'fr')
+  }
+
+  const links = [  // ← à l'intérieur aussi pour utiliser t()
+    { label: t('nav.about'),    href: '#about' },
+    { label: t('nav.skills'),   href: '#skills' },
+    { label: t('nav.projects'), href: '#projects' },
+    { label: t('nav.contact'),  href: '#contact' },
+  ]
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -38,8 +38,6 @@ export default function Navbar() {
         transition: 'all 0.3s ease',
       }}
     >
-    
-
       {/* Desktop links */}
       <ul style={{ display: 'flex', gap: '2rem', listStyle: 'none' }} className="nav-desktop">
         {links.map(l => (
